@@ -1,0 +1,2 @@
+$('tr#<%= dom_id(@user) %>').replaceWith("<%= escape_javascript(render @user) %>")
+$('tr#<%= dom_id(@user) %>').addClass('highlight');

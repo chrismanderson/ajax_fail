@@ -1,0 +1,28 @@
+<%= content_tag_for :tr, user do %>
+  <%= form_for(user, remote: true) do |f| %>
+
+    <td>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+    </td>
+
+    <td>
+      <div class="actions">
+        <!-- does not work when added via ajax -->
+        <%= f.submit %>
+      </div>
+    </td>
+
+    <td>
+      <div class="actions">
+        <!-- works even when added via ajax -->
+        <%= link_to "Delete user", user, remote: true, method: :delete %>
+      </div>
+    </td>
+
+  <% end %>
+<% end %>
+
+

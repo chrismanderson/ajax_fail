@@ -1,0 +1,22 @@
+<h1>Ajax fail</h1>
+
+<b>Users</b>
+<p>Clicking 'Update User' only works the first time. Clicking 'Create user', then update user, does nothing</p>
+ 
+<table id="users">
+  <tr>
+    <th>Name</th>
+    <th>Save</th>
+    <th>Delete</th>
+  </tr>
+
+  <%= render @users %>
+</table>
+ 
+<hr>
+ 
+<%= form_for(@user, remote: true) do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
